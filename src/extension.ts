@@ -4,8 +4,16 @@ const transformTimeForHumans = () => {
 	vscode.window.showInformationMessage('Time For Humans');
 	const editor = vscode.window.activeTextEditor;
 	const text = editor ? editor.document.getText(editor.selection) : undefined;
+	
 
 	if (editor && text) {
+
+		console.log(editor);
+		console.log('lines => ', editor.selection.start.line - editor.selection.end.line + 1);
+
+		const lines = editor.selection.start.line - editor.selection.end.line + 1;
+		
+		//TODO Add loop in lines for adding dates in necessary ones
 		const timestamp : number = parseInt(text);
 		var myDate : Date = new Date( timestamp * 1000);
 		const lang = editor.document.languageId;
