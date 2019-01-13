@@ -1,26 +1,45 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-
 const transformTimeForHumans = () => {
-	// Display a message box to the user
 	vscode.window.showInformationMessage('Time For Humans');
-}
+	const editor = vscode.window.activeTextEditor;
+	const text = editor ? editor.document.getText(editor.selection) : undefined;
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+	if (editor && text) {
+		const timestamp : number = parseInt(text);
+		var myDate : Date = new Date( timestamp * 1000);
+		const lang = editor.document.languageId;
+		let commentStart : string = '';
+		let commentEnd: string = '';
+		switch(lang) {			
+			case 'csharp':			
+			case 'go':
+			case 'java':
+			case 'javascript':			
+			case 'php':
+			case 'plaintext':
+			case 'typescript':
+				commentStart = ' // ';
+				break;
+			case 'python':
+			case 'ruby':
+				commentStart = ' # ';
+				break;
+			default:
+				commentStart = '';
+				break;
+		}
+		const newText = text + commentStart + myDate.toUTCString() + "  => Locale Time " + myDate.toLocaleString() + commentEnd;
+
+		editor.edit(builder => builder.replace(editor.selection, newText));	
+	}
+};
+
 export function activate(context: vscode.ExtensionContext) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-		console.log('Congratulations, your extension "time-for-humans" is now active!');
+	console.log('Congratulations, your extension "time-for-humans" is now active!');
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
 	let disposable = vscode.commands.registerCommand('extension.humanTime', () => {
-		// The code you place here will be executed every time your command is executed
 		transformTimeForHumans();
 	});
 
