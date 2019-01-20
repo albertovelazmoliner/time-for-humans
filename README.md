@@ -6,7 +6,7 @@ Time For Humans allows you to select a piece of text with a timestamp and add a 
 
 ## Extension Settings
 
-Work in progress
+Work in progress. It will be available in future versions.
 
 ## Known Issues
 
