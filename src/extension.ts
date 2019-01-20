@@ -1,17 +1,17 @@
 import * as vscode from 'vscode';
 
 const transformTimeForHumans = () => {
-	vscode.window.showInformationMessage('Time For Humans');
+	// vscode.window.showInformationMessage('Time For Humans');
 	const editor = vscode.window.activeTextEditor;
 	const text = editor ? editor.document.getText(editor.selection) : undefined;
 	
 
 	if (editor && text) {
 
-		console.log(editor);
-		console.log('lines => ', editor.selection.start.line - editor.selection.end.line + 1);
+		// console.log(editor);
+		// console.log('lines => ', editor.selection.start.line - editor.selection.end.line + 1);
 
-		const lines = editor.selection.start.line - editor.selection.end.line + 1;
+		// const lines = editor.selection.start.line - editor.selection.end.line + 1;
 		
 		//TODO Add loop in lines for adding dates in necessary ones
 		const timestamp : number = parseInt(text);
@@ -27,7 +27,7 @@ const transformTimeForHumans = () => {
 			case 'php':
 			case 'plaintext':
 			case 'typescript':
-				commentStart = ' // ';
+				commentStart = ' /* ';
 				break;
 			case 'python':
 			case 'ruby':
@@ -45,7 +45,7 @@ const transformTimeForHumans = () => {
 
 export function activate(context: vscode.ExtensionContext) {
 
-	console.log('Congratulations, your extension "time-for-humans" is now active!');
+	// console.log('Congratulations, your extension "time-for-humans" is now active!');
 
 	let disposable = vscode.commands.registerCommand('extension.humanTime', () => {
 		transformTimeForHumans();
