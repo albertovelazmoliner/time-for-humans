@@ -10,6 +10,10 @@
 	"categories": [
 		"Other"
 	],
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/albertovelazmoliner/time-for-humans.git"
+    },
 	"activationEvents": [
 		"onCommand:extension.humanTime"
 	],
