@@ -2,7 +2,7 @@
 	"name": "time-for-humans",
 	"displayName": "Time For Humans",
 	"description": "Transform timestamp to humans",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "AlbertoVelaz",
 	"engines": {
 		"vscode": "^1.30.0"
@@ -11,9 +11,9 @@
 		"Other"
 	],
 	"repository": {
-        "type": "git",
-        "url": "https://github.com/albertovelazmoliner/time-for-humans.git"
-    },
+		"type": "git",
+		"url": "https://github.com/albertovelazmoliner/time-for-humans.git"
+	},
 	"activationEvents": [
 		"onCommand:extension.humanTime"
 	],
