@@ -5,3 +5,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 - Initial release
+
+## 0.0.3
+- Add keybinding 
+    - Mac: cmd + option + t
+    - Win: ctrl + alt + t
