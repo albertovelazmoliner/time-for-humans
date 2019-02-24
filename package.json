@@ -34,12 +34,14 @@
 				}
 			]
 		},
-		"keybindings": [{
-			"command": "extension.humanTime",
-			"key": "ctrl+alt+t",
-			"mac": "cmd+alt+t",
-			"when": "editorTextFocus"
-		}]
+		"keybindings": [
+			{
+				"command": "extension.humanTime",
+				"key": "ctrl+alt+t",
+				"mac": "cmd+alt+t",
+				"when": "editorTextFocus"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
