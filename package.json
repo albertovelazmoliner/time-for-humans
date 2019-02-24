@@ -20,6 +20,22 @@
 	"main": "./out/extension.js",
 	"icon": "icon.png",
 	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Time for Humans configuration",
+			"properties": {
+				"timeForHumans.format": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": 
+						"ddd, MMMM Do YYYY, hh:mm:ss a Z"
+					,
+					"description": "The string that defines the format of the date"
+				}
+			}
+		},
 		"commands": [
 			{
 				"command": "extension.humanTime",
