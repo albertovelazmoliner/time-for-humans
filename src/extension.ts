@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+const moment = require('moment');
 
 const transformTimeForHumans = () => {
 	// vscode.window.showInformationMessage('Time For Humans');
@@ -12,10 +13,14 @@ const transformTimeForHumans = () => {
 		// console.log('lines => ', editor.selection.start.line - editor.selection.end.line + 1);
 
 		// const lines = editor.selection.start.line - editor.selection.end.line + 1;
-		
+		// console.log(vscode.workspace.getConfiguration('timeForHumans'));
 		//TODO Add loop in lines for adding dates in necessary ones
 		const timestamp : number = parseInt(text);
-		var myDate : Date = new Date( timestamp * 1000);
+		// var myDate : Date = new Date( timestamp * 1000);
+		var length : number = Math.log(timestamp) * Math.LOG10E + 1 | 0;
+		var difference : number = ((13 - length) < 0) ?  0 : 13 - length; 
+		var factor : number = factor = 10 ** difference;
+		var myDate : string = moment(timestamp * factor).format();
 		const lang = editor.document.languageId;
 		let commentStart : string = '';
 		let commentEnd: string = '';
@@ -38,8 +43,9 @@ const transformTimeForHumans = () => {
 				commentStart = '';
 				break;
 		}
-		const newText = text + commentStart + myDate.toUTCString() + "  => Locale Time " + myDate.toLocaleString() + commentEnd;
-
+		//const newText = text + commentStart + myDate.toUTCString() + "  => Locale Time " + myDate.toLocaleString() + commentEnd;
+		const newText = text + commentStart + ' ' + myDate + ' ' + myDate + commentEnd;
+		
 		editor.edit(builder => builder.replace(editor.selection, newText));	
 	}
 };
