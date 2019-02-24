@@ -2,7 +2,7 @@
 	"name": "time-for-humans",
 	"displayName": "Time For Humans",
 	"description": "Transform timestamp to humans",
-	"version": "0.5.0",
+	"version": "0.0.4",
 	"publisher": "AlbertoVelaz",
 	"engines": {
 		"vscode": "^1.30.0"
