@@ -22,13 +22,14 @@ const transformTimeForHumans = () => {
 		switch(lang) {			
 			case 'csharp':			
 			case 'go':
-			case 'java':
-			case 'javascript':			
+			case 'java':			
 			case 'php':
 			case 'plaintext':
 			case 'typescript':
 				commentStart = ' /* ';
 				break;
+			case 'javascript':
+				commentStart = ' // ';
 			case 'python':
 			case 'ruby':
 				commentStart = ' # ';
