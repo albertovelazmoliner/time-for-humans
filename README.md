@@ -17,7 +17,7 @@ Extension setting for let user update the format
     - timeForHumans.format
         - default value is: "ddd, MMMM Do YYYY, hh:mm:ss a Z"
     - You can use the moment.js configuration in order to get the desired format of the date
-        - <a href="https://momentjs.com/docs/#/displaying/format/">moment.js display format</a>
+        - <a href="https://momentjs.com/docs/#/displaying/format/">www.momentjs.com</a>
         
 | | Token | Output |
 |----------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------|:--------------------|
