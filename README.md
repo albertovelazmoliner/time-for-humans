@@ -14,10 +14,10 @@ You can select several rows at the same time
 ## Extension Settings
 
 Extension setting for letting user update the format in: timeForHumans.format
-    
-   - default value is: "ddd, MMMM Do YYYY, hh:mm:ss a Z"
-    
- - You can use the moment.js configuration in order to get the desired format of the date <a href="https://momentjs.com/docs/#/displaying/format/">www.momentjs.com</a>
+
+The default value is: "ddd, MMMM Do YYYY, hh:mm:ss a Z"
+
+You can use the moment.js configuration in order to get the desired format of the date <a href="https://momentjs.com/docs/#/displaying/format/">www.momentjs.com</a>
        
 | | Token | Output |
 |----------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------|:--------------------|
